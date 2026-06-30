@@ -1,13 +1,10 @@
 # Policy-Mix-Paper-Code-
 This code is being developed by Ioannis Milioritsas. The associated paper is : "Single support policies, not complex policy mixes, have been the driver of renewable power deployment in Europe", by Milioritsas, Chaianong, Nipper and Lilliestam.
 
----
 
 ## Overview
 
 This repository contains the data and code required to reproduce the main results and figures of the manuscript. The analysis identifies effective renewable energy policy interventions in Europe by combining structural break detection methods with a detailed policy dataset for solar and wind power over the period 1991–2023.
-
----
 
 The repository is structured to allow full replication of:
 
@@ -19,47 +16,47 @@ The repository is structured to allow full replication of:
 ---
 
 ## Repository Structure
-0.Data
+0.Data:
 This file contains all the necessary data to replicate the analysis - in xlsx or csv format - including the dependent variables for both the solar and wind models, the control variables and the policy data. 
 
 ---
 
-#Datasets description
- *electricity-demand.csv:                                            
- # Electiricty demand data; used as a control variable for the robustness checks. Source: OurWorldInData (OWID) taken from Ember & Energy Institute
- *GDPpc_const_WB:                                 
- # Income per capita data used as a control variable in the solar model. Source: World Bank
- *IRENA_Stats_extract_2025 H2.xlsx:                                   
- # Complementary installed capacity data used as a depndent variable in both wind and solar models for the UK for 2020-2023. Source: IRENA 
- *long_term_interest_rates.csv:                                  
- # Nominal long-term interest rates, weighted mean by GDP, weights in current euro;  used as a control variable for both the solar and wind models. Source: AMECO 
- *National_Large Non-Residential_Installed Prices (2000-2023).csv:    
- # National Large Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- *National_Residential_Installed Prices (2000-2023).csv:   
- # National Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- *National_Small Non-Residential_Installed Prices (2000-2023).csv:    
- # National Small Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- *share-electricity-fossil-fuels.csv:   
- # Share of electricity coming from fossil fuels; used as a control variable for the robustness checks. Source: OWID taken from Ember (2025), Energy Institute
- *solar_installation_costs_global.xlsx:                               
- # Global solar installation costs; used to create the proxy for global solar installation costs in the solar model. Source: IRENA
- *wholesale_electricity_prices.csv:                              
- # Wholesale electricityprice data; used as a control variable for the robustness checks. Source: Eurostat
- *wind_installation_costs_global_2023.csv:                            
- # Global wind installation costs; used as a control variable for the wind model. Source: IRENA
- *wind_installed_capacity_Eurostat.xlsx:                           
- # Wind cumulative installed capacity data; used to create the dependent variable of the wind model. Source: Eurostat
- *solar_installed_capacity_Eurostat:                             
- # Solar cumulative installed capacity data; used to create the dependent variable of the solar model. Source: Eurostat
- *policy_analysis_solar.xlsx:                                 
- # Policy analysis data generated from the solar model, used to generate Figure 3a. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas
- *policy_analysis_solar.xlsx:                                        
- # Policy analysis output data generated from the wind model, used to generate Figure 3b. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas
+## Datasets description
+ * electricity-demand.csv:                                            
+  Electiricty demand data; used as a control variable for the robustness checks. Source: OurWorldInData (OWID) taken from Ember & Energy Institute
+ * GDPpc_const_WB:                                 
+ Income per capita data used as a control variable in the solar model. Source: World Bank
+ * IRENA_Stats_extract_2025 H2.xlsx:                                   
+ Complementary installed capacity data used as a depndent variable in both wind and solar models for the UK for 2020-2023. Source: IRENA 
+ * long_term_interest_rates.csv:                                  
+ Nominal long-term interest rates, weighted mean by GDP, weights in current euro;  used as a control variable for both the solar and wind models. Source: AMECO 
+ * National_Large Non-Residential_Installed Prices (2000-2023).csv:    
+ National Large Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
+ * National_Residential_Installed Prices (2000-2023).csv:   
+ National Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
+ * National_Small Non-Residential_Installed Prices (2000-2023).csv:    
+ National Small Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
+ * share-electricity-fossil-fuels.csv:   
+ Share of electricity coming from fossil fuels; used as a control variable for the robustness checks. Source: OWID taken from Ember (2025), Energy Institute
+ * solar_installation_costs_global.xlsx:                               
+ Global solar installation costs; used to create the proxy for global solar installation costs in the solar model. Source: IRENA
+ * wholesale_electricity_prices.csv:                              
+ Wholesale electricityprice data; used as a control variable for the robustness checks. Source: Eurostat
+ * wind_installation_costs_global_2023.csv:                            
+ Global wind installation costs; used as a control variable for the wind model. Source: IRENA
+ * wind_installed_capacity_Eurostat.xlsx:                           
+ Wind cumulative installed capacity data; used to create the dependent variable of the wind model. Source: Eurostat
+ * solar_installed_capacity_Eurostat:                             
+ Solar cumulative installed capacity data; used to create the dependent variable of the solar model. Source: Eurostat
+ * policy_analysis_solar.xlsx:                                 
+ Policy analysis data generated from the solar model, used to generate Figure 3a. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas
+ * policy_analysis_solar.xlsx:                                        
+ Policy analysis output data generated from the wind model, used to generate Figure 3b. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas
  
 ---
 
 #Code description 
- *00.master_script_solar.R:
+ * 00.master_script_solar.R:
  # Cleans memory, loads packages, sets the working direcotry, and runs the solar model analysis
  *00.master_script_wind.R:
  # Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
@@ -97,22 +94,22 @@ This project was implemented in R.
 
 
 ### Required R packages:
-data.table
-dplyr
-tidyr
-stringr
-gets
-getspanel
-readr
-readxl
-plm
-countrycode
-tidyverse
-lubridate
-ggplot2
-patchwork 
-writexl
-extrafont
+* data.table
+* dplyr
+* tidyr
+* stringr
+* gets
+* getspanel
+* readr
+* readxl
+* plm
+* countrycode
+* tidyverse
+* lubridate
+* ggplot2
+* patchwork 
+* writexl
+* extrafont
 
 ## Reproducibility Notes
 
