@@ -55,31 +55,31 @@ This file contains all the necessary data to replicate the analysis - in xlsx or
  
 ---
 
-#Code description 
+## Code description 
  * 00.master_script_solar.R:
- # Cleans memory, loads packages, sets the working direcotry, and runs the solar model analysis
+ Cleans memory, loads packages, sets the working direcotry, and runs the solar model analysis
  *00.master_script_wind.R:
- # Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
- *01.data_cleaning_solar.R:
- # Merges raw datasets, constructs variables used in the solar model analysis
- *01.data_cleaning_wind.R:
- # Merges raw datasets, constructs variables used in the wind model analysis
- *02.analysis_solar.R:
- # Implements the strucural break solar models, displays the results, performs serial correlation robustness checks, and create the policy contibutions
- *02.analysis_wind.R:
- # Implements the strucural break solar models, displays the results,  performs serial correlation robustness checks, and create the policy contibutions
- *03.figures_solar (Fig.3a).R:
- # Reproduces manuscript figure 3a using the solar model output 
- *03.figures_wind (Fig.3b).R:
- # Reproduces manuscript figure 3b using the wind model output
- *04.robustness_checks_solar_excluding_prices.R:
- # Robustness checks for the solar model 
- *04.robustness_checks_solar_with_prices.R:
- # Additional robustness checks for the solar model, including wholesale electricity prices as control variable 
- *04.robustness_checks_wind_excluding_prices.R:
- # Robustness checks for the wind model
- *04.robustness_checks_wind_with_prices.R:
- # Additional robustness checks for the wind model, including wholesale electricity prices as control variable
+ Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
+ * 01.data_cleaning_solar.R:
+ Merges raw datasets, constructs variables used in the solar model analysis
+ * 01.data_cleaning_wind.R:
+ Merges raw datasets, constructs variables used in the wind model analysis
+ * 02.analysis_solar.R:
+ Implements the strucural break solar models, displays the results, performs serial correlation robustness checks, and create the policy contibutions
+ * 02.analysis_wind.R:
+ Implements the strucural break solar models, displays the results,  performs serial correlation robustness checks, and create the policy contibutions
+ * 03.figures_solar (Fig.3a).R:
+ Reproduces manuscript figure 3a using the solar model output 
+ * 03.figures_wind (Fig.3b).R:
+ Reproduces manuscript figure 3b using the wind model output
+ * 04.robustness_checks_solar_excluding_prices.R:
+ Robustness checks for the solar model 
+ * 04.robustness_checks_solar_with_prices.R:
+ Additional robustness checks for the solar model, including wholesale electricity prices as control variable 
+ * 04.robustness_checks_wind_excluding_prices.R:
+ Robustness checks for the wind model
+ * 04.robustness_checks_wind_with_prices.R:
+ Additional robustness checks for the wind model, including wholesale electricity prices as control variable
 
 ---
 
@@ -93,7 +93,7 @@ This project was implemented in R.
 ---
 
 
-### Required R packages:
+## Required R packages:
 * data.table
 * dplyr
 * tidyr
