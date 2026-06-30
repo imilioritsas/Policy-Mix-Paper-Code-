@@ -16,8 +16,8 @@ The repository is structured to allow full replication of:
 ---
 
 ## Repository Structure
-* 0.Data:
-This file contains all the necessary data to replicate the analysis - in xlsx or csv format - including the dependent variables for both the solar and wind models, the control variables and the policy data. 
+ * 0.Data:
+ This file contains all the necessary data to replicate the analysis - in xlsx or csv format - including the dependent variables for both the solar and wind models, the control variables and the policy data. 
 
 ---
 
