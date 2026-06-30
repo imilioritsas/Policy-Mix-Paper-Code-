@@ -58,7 +58,7 @@ This file contains all the necessary data to replicate the analysis - in xlsx or
 ## Code description 
  * 00.master_script_solar.R:
  Cleans memory, loads packages, sets the working direcotry, and runs the solar model analysis
- *00.master_script_wind.R:
+ * 00.master_script_wind.R:
  Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
  * 01.data_cleaning_solar.R:
  Merges raw datasets, constructs variables used in the solar model analysis
