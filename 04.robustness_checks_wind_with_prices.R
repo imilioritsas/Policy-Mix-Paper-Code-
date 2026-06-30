@@ -11,7 +11,7 @@ Europe_iso<-c("AUT", "BEL","DNK","DEU","ESP","FIN", "FRA", "GRC","ITA","IRL", "N
 ###### import data #####
 
 #long term nominal interest rates - data from AMECO database from the EC
-ltir <- read_csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/long_term_interest_rates.csv") %>%
+ltir <- read_csv("/long_term_interest_rates.csv") %>% #use own directory here
   # Select relevant columns and convert them to character type
   select(Country, matches("^\\d{4}$")) %>%
   mutate(across(matches("^\\d{4}$"), as.character)) %>%
@@ -55,7 +55,7 @@ ggplot(pltir, aes(x=year, y=log(long_term_int_rates), group=country, color=count
   theme_minimal() # issue with 0 values; need adjustment - see below
 
 # gdp per capita; data from WB #
-gdp_pc<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/GDPpc_const_WB.csv") %>% 
+gdp_pc<-read.csv("/GDPpc_const_WB.csv") %>% #use own directory here
   filter(Country.Code %in% Europe_iso) %>% 
   select(c(2, 5:39)) %>% 
   pivot_longer(2:36, names_to = "year") %>%
@@ -81,7 +81,7 @@ ggplot(pgdp_pc, aes(x=year, y=log(gdp_per_capita), group=country, color=country)
   theme_minimal()
 
 #electricity demand - data from OWID taken from Ember & Energy Institute
-power_demand<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/electricity-demand.csv") %>% 
+power_demand<-read.csv("/electricity-demand.csv") %>% #use own directory here
   filter(Code %in% Europe_iso) %>%
   select(c(2:4)) %>%
   transmute(country=Code, year=as.numeric(Year),
@@ -105,7 +105,7 @@ ggplot(ppower_demand, aes(x=year, y=log(power_demand), group=country, color=coun
   theme_minimal()
 
 #share of electricity coming from fossil fuels - data from OWID taken from Ember (2025); Energy Institute - Statistical Review of World Energy (2025)
-ff_share<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/share-electricity-fossil-fuels.csv") %>% 
+ff_share<-read.csv("/share-electricity-fossil-fuels.csv") %>% #use own directory here
   filter(Code %in% Europe_iso) %>%
   select(c(2:4)) %>%
   transmute(country=Code, year=as.numeric(Year),
@@ -123,7 +123,7 @@ ggplot(pff_share, aes(x=year, y=fossil_fuel_share, group=country, color=country)
 
 
 #wholesale electricity prices - data from Eurostat
-wholesale_el_prices <- read_csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/wholesale_electricity_prices.csv") %>%
+wholesale_el_prices <- read_csv("/wholesale_electricity_prices.csv") %>% #use own directory here
   # Select relevant columns and convert them to character type
   select(country, matches("^\\d{4}$")) %>%
   mutate(across(matches("^\\d{4}$"), as.character)) %>%
@@ -163,7 +163,7 @@ ggplot(pwholesale_el_prices, aes(x=year, y=log(prices), group=country, color=cou
 
 
 #global wind installation costs - data from IRENA
-wind_costs<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/wind_installation_costs_global_2023.csv") %>% 
+wind_costs<-read.csv("/wind_installation_costs_global_2023.csv") %>% #use own directory here
   select(c(1,3)) %>%
   transmute(year=as.numeric(Year),
             onshore_wind_costs=as.numeric(Weighted.average))
@@ -199,7 +199,7 @@ ggplot(wind_costs_test, aes(x=year, y=log(onshore_wind_costs))) +
 
 #wind capacity 
 #use Eurostat data; start from 1990
-wind_capacity<-read_xlsx("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/wind_installed_capacity_Eurostat.xlsx") %>% 
+wind_capacity<-read_xlsx("/wind_installed_capacity_Eurostat.xlsx") %>% #use own directory here
   filter(!row_number() %in% c(1:8,10, 54:56)) %>% 
   pivot_longer(cols = 2:35, names_to = "TIME", values_to = "wind.cap") 
 
@@ -219,7 +219,7 @@ wind_capacity<-wind_capacity %>%
 
 #import UK wind data from IRENA (2020-2023)
 # Read the "Country" sheet
-irena_data <- read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/IRENA_Stats_extract_2025 H2.xlsx", 
+irena_data <- read_excel("/IRENA_Stats_extract_2025 H2.xlsx", #use own directory here
                          sheet = "Country") 
 
 

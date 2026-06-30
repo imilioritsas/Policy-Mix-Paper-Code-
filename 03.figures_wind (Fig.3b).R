@@ -3,7 +3,7 @@
 # =========================================================
 #For running this script, we use the manually created 
 #"policy_analysis_wind.xlsx" Excel file;
-#we do this to ensure that the individual policy characteristics & effects
+#we do this to ensure that each individual policy´s characteristics & effects
 #are aligned with our general research design on policy effectiveness
 
 # Load packages
@@ -16,7 +16,7 @@ library(extrafont)
 
 
 # File path
-file_path <- "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/policy_analysis_wind.xlsx"
+file_path <- "/policy_analysis_wind.xlsx" #use own directory here
 
 # Read data
 data <- read_excel(file_path, sheet = "effect_quant_by_period")

@@ -11,7 +11,7 @@ Europe_iso<-c("AUT", "BEL","DNK","DEU","ESP","FIN", "FRA", "GRC","ITA","IRL", "N
 ###### import data #####
 
 #long term nominal interest rates - data from AMECO database from the EC
-ltir <- read_csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/long_term_interest_rates.csv") %>%
+ltir <- read_csv("/long_term_interest_rates.csv") %>% #use own directory here
   # Select relevant columns and convert them to character type
   select(Country, matches("^\\d{4}$")) %>%
   mutate(across(matches("^\\d{4}$"), as.character)) %>%
@@ -55,7 +55,7 @@ ggplot(pltir, aes(x=year, y=log(long_term_int_rates), group=country, color=count
   theme_minimal() # issue with 0 values; need adjustment - see below
 
 #global wind installation costs - data from IRENA
-wind_costs<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/wind_installation_costs_global_2023.csv") %>% 
+wind_costs<-read.csv("/wind_installation_costs_global_2023.csv") %>% #use own directory here
   select(c(1,3)) %>%
   transmute(year=as.numeric(Year),
             onshore_wind_costs=as.numeric(Weighted.average))
@@ -91,7 +91,7 @@ ggplot(wind_costs_test, aes(x=year, y=log(onshore_wind_costs))) +
 
 #wind capacity 
 #use Eurostat data; start from 1990
-wind_capacity<-read_xlsx("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/wind_installed_capacity_Eurostat.xlsx") %>% 
+wind_capacity<-read_xlsx("/wind_installed_capacity_Eurostat.xlsx") %>% #use own directory here
   filter(!row_number() %in% c(1:8,10, 54:56)) %>% 
   pivot_longer(cols = 2:35, names_to = "TIME", values_to = "wind.cap") 
 
@@ -111,7 +111,7 @@ wind_capacity<-wind_capacity %>%
 
 #import Uk solar data from IRENA (2020-2023)
 # Read the "Country" sheet
-irena_data <- read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/IRENA_Stats_extract_2025 H2.xlsx", 
+irena_data <- read_excel("/IRENA_Stats_extract_2025 H2.xlsx", #use own directory here
                          sheet = "Country") 
 
 

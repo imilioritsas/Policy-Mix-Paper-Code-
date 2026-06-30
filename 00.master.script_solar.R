@@ -19,7 +19,7 @@ library(patchwork)  # For arranging multiple plots
 library(writexl)
 
 # set working directory
-dir <- "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code" #use own directory here
+dir <- "" #use own directory here
 setwd(dir)
 
 # call scripts

@@ -13,7 +13,7 @@ Europe_iso<-c("AUT", "BEL", "DNK","DEU","ESP","FRA", "GRC","ITA", "NLD", "PRT", 
 ###### import data #####
 
 #long term nominal interest rates - data from AMECO database from the EC
-ltir <- read_csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/long_term_interest_rates.csv") %>%
+ltir <- read_csv("/long_term_interest_rates.csv") %>% #use own directory here
   # Select relevant columns and convert them to character type
   select(Country, matches("^\\d{4}$")) %>%
   mutate(across(matches("^\\d{4}$"), as.character)) %>%
@@ -57,7 +57,7 @@ ggplot(pltir, aes(x=year, y=log(long_term_int_rates), group=country, color=count
   theme_minimal() # issue with 0 values; need adjustment - see below
 
 # gdp per capita; data from WB #
-gdp_pc<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/GDPpc_const_WB.csv") %>% 
+gdp_pc<-read.csv("/GDPpc_const_WB.csv") %>% #use own directory here
   filter(Country.Code %in% Europe_iso) %>% 
   select(c(2, 5:39)) %>% 
   pivot_longer(2:36, names_to = "year") %>%
@@ -84,7 +84,7 @@ ggplot(pgdp_pc, aes(x=year, y=log(gdp_per_capita), group=country, color=country)
   theme_minimal()
 
 # solar installation costs data start 2010
-solar_costs<-read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/solar_installation_costs_global.xlsx") %>% 
+solar_costs<-read_excel("/solar_installation_costs_global.xlsx") %>% #use own directory here
   select(c(1,3)) %>%
   transmute(year=as.numeric(Year),
             solar_costs=as.numeric(Weighted_average))
@@ -105,19 +105,19 @@ ggplot(solar_costs, aes(x=year, y=log(solar_costs))) +
 
 #import US solar installation costs data
 # Load US Residential Solar  Data
-residential_solar_costs <- read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/National_Residential_Installed Prices (2000-2023).csv") %>% 
+residential_solar_costs <- read.csv("/National_Residential_Installed Prices (2000-2023).csv") %>% #use own directory here
   select(c(3,4)) %>%
   transmute(year = as.numeric(Year),
             res_solar_costs = as.numeric(Median) * 1000)  # Convert to $/kW
 
 # Load Small Non-Residential Solar CAPEX Data
-small_non_residential_solar_costs <- read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/National_Small Non-Residential_Installed Prices (2000-2023).csv") %>% 
+small_non_residential_solar_costs <- read.csv("/National_Small Non-Residential_Installed Prices (2000-2023).csv") %>% #use own directory here
   select(c(3,4)) %>%
   transmute(year = as.numeric(Year),
             small_non_res_solar_costs = as.numeric(Median) * 1000)
 
 # Load Large Non-Residential Solar CAPEX Data
-large_non_residential_solar_costs <- read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/National_Large Non-Residential_Installed Prices (2000-2023).csv") %>% 
+large_non_residential_solar_costs <- read.csv("/National_Large Non-Residential_Installed Prices (2000-2023).csv") %>% #use own directory here
   select(c(3,4)) %>%
   transmute(year = as.numeric(Year),
             large_non_res_solar_costs = as.numeric(Median) * 1000)
@@ -128,7 +128,7 @@ Solar_costs_US <- full_join(residential_solar_costs, small_non_residential_solar
 
 
 # solar installation cost data start 2010
-solar_costs<-read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/solar_installation_costs_global.xlsx") %>% 
+solar_costs<-read_excel("/solar_installation_costs_global.xlsx") %>% #use own directory here
   select(c(1,3)) %>%
   transmute(year=as.numeric(Year),
             solar_costs=as.numeric(Weighted_average))
@@ -220,7 +220,7 @@ print(solar_costs_correlations_matrix)
 
 
 #electricity demand - data from OWID taken from Ember & Energy Institute
-power_demand<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/electricity-demand.csv") %>% 
+power_demand<-read.csv("/electricity-demand.csv") %>% #use own directory here
   filter(Code %in% Europe_iso) %>%
   select(c(2:4)) %>%
   transmute(country=Code, year=as.numeric(Year),
@@ -244,7 +244,7 @@ ggplot(ppower_demand, aes(x=year, y=log(power_demand), group=country, color=coun
   theme_minimal()
 
 #share of electricity coming from fossil fuels - data from OWID taken from Ember (2025); Energy Institute - Statistical Review of World Energy (2025)
-ff_share<-read.csv("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/share-electricity-fossil-fuels.csv") %>% 
+ff_share<-read.csv("/share-electricity-fossil-fuels.csv") %>% #use own directory here
   filter(Code %in% Europe_iso) %>%
   select(c(2:4)) %>%
   transmute(country=Code, year=as.numeric(Year),
@@ -263,7 +263,7 @@ ggplot(pff_share, aes(x=year, y=fossil_fuel_share, group=country, color=country)
 
 #solar capacity 
 #use Eurostat data; start from 2000
-solar_capacity<-read_xlsx("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/solar_installed_capacity_Eurostat.xlsx") %>% 
+solar_capacity<-read_xlsx("/solar_installed_capacity_Eurostat.xlsx") %>% #use own directory here
   filter(!row_number() %in% c(1:8,10, 54:56)) %>% 
   pivot_longer(cols = 2:35, names_to = "TIME", values_to = "solar.cap") 
 
@@ -283,7 +283,7 @@ solar_capacity<-solar_capacity %>%
 
 #import UK solar data from IRENA (2020-2023)
 # Read the "Country" sheet
-irena_data <- read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/0.Data/IRENA_Stats_extract_2025 H2.xlsx", 
+irena_data <- read_excel("/IRENA_Stats_extract_2025 H2.xlsx", #use own directory here
                          sheet = "Country")
 
 # Filter for UK Solar PV (on- and off-grid)

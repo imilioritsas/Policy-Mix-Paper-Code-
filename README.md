@@ -39,7 +39,7 @@ Instructions how to replicate the main results:
  * IRENA_Stats_extract_2025 H2.xlsx:                                   
  Complementary installed capacity data used as a depndent variable in both wind and solar models for the UK for 2020-2023. Source: IRENA 
  * long_term_interest_rates.csv:                                  
- Nominal long-term interest rates, weighted mean by GDP, weights in current euro;  used as a control variable for both the solar and wind models. Source: AMECO
+ Nominal long-term interest rates, weighted mean by GDP, weights in current euro;  used as a control variable for both the solar and wind models. Source: AMECO (European Comission)
  * National_Large Non-Residential_Installed Prices (2000-2023).csv:    
  National Large Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
  * National_Residential_Installed Prices (2000-2023).csv:   

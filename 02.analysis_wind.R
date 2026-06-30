@@ -106,19 +106,19 @@ coef_names<-as.data.frame(row.names(is[["isatpanel.result"]][["mean.results"]]))
 
 
 #export to excel
-openxlsx::write.xlsx(final_data, "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/estimated_data_additions_model_wind.xlsx", 
+openxlsx::write.xlsx(final_data, "/estimated_data_additions_model_wind.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="estimated_data", startCol="A", startRow=1)
 
 
-openxlsx::write.xlsx(cbind(coef_names,est_coefficients), "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/estimated_coefficients_additions_model_wind.xlsx", 
+openxlsx::write.xlsx(cbind(coef_names,est_coefficients), "/estimated_coefficients_additions_model_wind.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="estimated_coefs", startCol="A", startRow=1)
 
-openxlsx::write.xlsx(dat_test, "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/model_data_additions_model_wind.xlsx", 
+openxlsx::write.xlsx(dat_test, "/model_data_additions_model_wind.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="model_data", startCol="A", startRow=1)
 
 #Calculate policy contributions
-final_data <- read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/estimated_data_additions_model_wind.xlsx")
-coefficients <- read_excel("R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/estimated_coefficients_additions_model_wind.xlsx")
+final_data <- read_excel("/estimated_data_additions_model_wind.xlsx")#use own directory here
+coefficients <- read_excel("/estimated_coefficients_additions_model_wind.xlsx")#use own directory here
 
 # Rename coefficient columns for consistency
 colnames(coefficients) <- c("variable", "coefficient", "st.error", "t.stat", "p.value")
@@ -296,16 +296,16 @@ negative_effects <- coefficients %>%
 
 #export data to excel 
 #estimated policy effects
-openxlsx::write.xlsx(policy_effects_cumulative, "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/policy_effects_wind_additions_model.xlsx", 
+openxlsx::write.xlsx(policy_effects_cumulative, "/policy_effects_wind_additions_model.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="policy_contributions_cum", startCol="A", startRow=1)
 
 #raw and estimated data for deployment contributions for all countries 
 #estimated cumulative installed capacity in last column of the sheet
-openxlsx::write.xlsx(capacity_data, "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/estimated_cumulative_capacity_wind.xlsx", 
+openxlsx::write.xlsx(capacity_data, "/estimated_cumulative_capacity_wind.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="estimated_capacity", startCol="A", startRow=1)
 
 #raw and estimated data for deployment contributions for countries with policy effects only
 #estimated cumulative installed capacity in last column of the sheet
-openxlsx::write.xlsx(final_data, "R:/SFBWISO/RE Deployment/3. To Submit (AIP)/02. Data & Code/policy_contributions_wind_additions_model.xlsx", 
+openxlsx::write.xlsx(final_data, "/policy_contributions_wind_additions_model.xlsx", #use own directory here
                      asTable = FALSE, Overwrite=TRUE, sheetName="policy_contributions", startCol="A", startRow=1)
 
