@@ -84,7 +84,7 @@ solar model:
  * 04.robustness_checks_solar_with_prices.R:
  Additional robustness checks for the solar model, including wholesale electricity prices as control variable 
  
- windmodel
+ wind model:
  * 00.master_script_wind.R:
  Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
  * 01.data_cleaning_wind.R:
