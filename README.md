@@ -1,6 +1,9 @@
 # Policy-Mix-Paper-Code-
 This code is being developed by Ioannis Milioritsas. The associated paper is : "Single support policies, not complex policy mixes, have been the driver of renewable power deployment in Europe", by Milioritsas, Nipper, Chaianong, and Lilliestam.
 
+https://doi.org/10.5281/zenodo.21098736
+
+
 This repository contains the software accompanying a manuscript currently under review at Communications Earth & Environment.
 
 
@@ -163,9 +166,5 @@ This software is distributed under the MIT License.
 ## Status
 
 This repository corresponds to the version submitted for peer review.
-
----
-
-DOI badge: https://doi.org/10.5281/zenodo.21098736
 
 ---
