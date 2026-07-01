@@ -34,35 +34,35 @@ Instructions how to replicate the main results:
 ---
 
 ## Datasets description
- * solar_installed_capacity_Eurostat:                             
+ * **solar_installed_capacity_Eurostat**:                             
  Solar cumulative installed capacity data; used to create the dependent variable of the solar model. Source: Eurostat
- * wind_installed_capacity_Eurostat.xlsx:                           
+ * **wind_installed_capacity_Eurostat.xlsx**:                           
  Wind cumulative installed capacity data; used to create the dependent variable of the wind model. Source: Eurostat
- * IRENA_Stats_extract_2025 H2.xlsx:                                   
+ * **IRENA_Stats_extract_2025 H2.xlsx**:                                   
  Complementary installed capacity data used as a depndent variable in both wind and solar models for the UK for 2020-2023. Source: IRENA 
- * long_term_interest_rates.csv:                                  
+ * **long_term_interest_rates.csv**:                                  
  Nominal long-term interest rates, weighted mean by GDP, weights in current euro;  used as a control variable for both the solar and wind models. Source: AMECO (European Comission)
- * National_Large Non-Residential_Installed Prices (2000-2023).csv:    
+ * **National_Large Non-Residential_Installed Prices (2000-2023).csv**:    
  National Large Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- * National_Residential_Installed Prices (2000-2023).csv:   
+ * **National_Residential_Installed Prices (2000-2023).csv**:   
  National Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- * National_Small Non-Residential_Installed Prices (2000-2023).csv:    
+ * **National_Small Non-Residential_Installed Prices (2000-2023).csv**:    
  National Small Non-Residential Solar Installed Prices; used to create the proxy for global solar installation costs in the solar model. Source: NREL
- * solar_installation_costs_global.xlsx:                               
+ * **solar_installation_costs_global.xlsx**:                               
  Global solar installation costs; used to create the proxy for global solar installation costs in the solar model. Source: IRENA
- * wind_installation_costs_global_2023.csv:                            
+ * **wind_installation_costs_global_2023.csv**:                            
  Global wind installation costs; used as a control variable for the wind model. Source: IRENA
- * GDPpc_const_WB:                                 
+ * **GDPpc_const_WB**:                                 
  Income per capita data used as a control variable in the solar model. Source: World Bank
- * share-electricity-fossil-fuels.csv:   
+ * **share-electricity-fossil-fuels.csv**:   
  Share of electricity coming from fossil fuels; used as a control variable for the robustness checks. Source: OWID taken from Ember (2025), Energy Institute
- * wholesale_electricity_prices.csv:                              
+ * **wholesale_electricity_prices.csv**:                              
  Wholesale electricityprice data; used as a control variable for the robustness checks. Source: Eurostat
- * electricity-demand.csv:                                            
+ * **electricity-demand.csv**:                                            
   Electiricty demand data; used as a control variable for the robustness checks. Source: OurWorldInData (OWID) taken from Ember & Energy Institute
- * policy_analysis_solar.xlsx:                                 
+ * **policy_analysis_solar.xlsx**:                                 
  Policy analysis data generated from the solar model, used to generate Figure 3a. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas (the relevant data are in effect_quant_by_period sheet). This file also contains the data for generating Figures 1a and 1b in the Manuscript. 
- * policy_analysis_solar.xlsx:                                        
+ * **policy_analysis_solar.xlsx**:                                        
  Policy analysis output data generated from the wind model, used to generate Figure 3b. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas (the relevant data are in effect_quant_by_period sheet). This file also contains the data for generating Figures 1a and 1b in the Manuscript. 
  
 ---
@@ -70,31 +70,31 @@ Instructions how to replicate the main results:
 ## Code description 
 
 solar model:
- * 00.master_script_solar.R:
+ * **00.master_script_solar.R**:
  Cleans memory, loads packages, sets the working direcotry, and runs the solar model analysis
- * 01.data_cleaning_solar.R:
+ * **01.data_cleaning_solar.R**:
  Merges raw datasets, constructs variables used in the solar model analysis
- * 02.analysis_solar.R:
+ * **02.analysis_solar.R**:
  Implements the strucural break solar models, displays the results, performs serial correlation robustness checks, and create the policy contibutions
- * 03.figures_solar (Fig.3a).R:
+ * **03.figures_solar (Fig.3a).R**:
  Reproduces manuscript figure 3a using the solar model output 
- * 04.robustness_checks_solar_excluding_prices.R:
+ * **04.robustness_checks_solar_excluding_prices.R**:
  Robustness checks for the solar model 
- * 04.robustness_checks_solar_with_prices.R:
+ * **04.robustness_checks_solar_with_prices.R**:
  Additional robustness checks for the solar model, including wholesale electricity prices as control variable 
  
  wind model:
- * 00.master_script_wind.R:
+ * **00.master_script_wind.R**:
  Cleans memory, loads packages, sets the working direcotry, and runs the wind model analysis
- * 01.data_cleaning_wind.R:
+ * **01.data_cleaning_wind.R**:
  Merges raw datasets, constructs variables used in the wind model analysis
- * 02.analysis_wind.R:
+ * **02.analysis_wind.R**:
  Implements the strucural break solar models, displays the results,  performs serial correlation robustness checks, and create the policy contibutions
- * 03.figures_wind (Fig.3b).R:
+ * **03.figures_wind (Fig.3b).R**:
  Reproduces manuscript figure 3b using the wind model output
- * 04.robustness_checks_wind_excluding_prices.R:
+ * **04.robustness_checks_wind_excluding_prices.R**:
  Robustness checks for the wind model
- * 04.robustness_checks_wind_with_prices.R:
+ * **04.robustness_checks_wind_with_prices.R**:
  Additional robustness checks for the wind model, including wholesale electricity prices as control variable
 
 ---
