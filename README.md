@@ -68,7 +68,6 @@ Instructions how to replicate the main results:
 ---
 
 ## Code description 
-# Replication codes:
 
 solar model:
  * 00.master_script_solar.R:
