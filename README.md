@@ -18,7 +18,7 @@ The repository is structured to allow full replication of:
 Instructions how to replicate the main results:
 
 1. Copy all files and folders to a location of your choice.
-2. Open “00.master_script_solar.R” or "00.master_script_wind.R" in R, depending on the model you want to replicate.
+2. Open **00.master_script_solar.R** or **00.master_script_wind.R** in R, depending on the model you want to replicate.
 3. Update the relevant lines of the code in scripts 00-04 to indicate where you copied the data in STEP 1.
 5. Execute the scripts.
 
