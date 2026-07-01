@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: My Research Code
+authors:
+  - family-names: Milioritsas
+    given-names: Ioannis
+date-released: 2026-06-30
+message: "If you use this software, please cite the associated paper."
