@@ -165,3 +165,7 @@ This software is distributed under the MIT License.
 This repository corresponds to the version submitted for peer review.
 
 ---
+
+DOI badge: https://doi.org/10.5281/zenodo.21098736
+
+---
