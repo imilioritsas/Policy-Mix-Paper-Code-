@@ -147,3 +147,21 @@ All data necessary to reproduce the results are provided in this repository.
 For questions regarding the code or data, please contact the corresponding author.
 
 ---
+
+## Citation
+
+If you use this code, please cite the associated publication.
+
+---
+
+## License
+
+This software is distributed under the MIT License.
+
+---
+
+## Status
+
+This repository corresponds to the version submitted for peer review.
+
+---
