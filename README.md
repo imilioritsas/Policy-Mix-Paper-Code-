@@ -68,7 +68,7 @@ Instructions how to replicate the main results:
   Electiricty demand data; used as a control variable for the robustness checks. Source: OurWorldInData (OWID) taken from Ember & Energy Institute
  * **policy_analysis_solar.xlsx**:                                 
  Policy analysis data generated from the solar model, used to generate Figure 3a. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas (the relevant data are in effect_quant_by_period sheet). This file also contains the data for generating Figures 1a and 1b in the Manuscript. 
- * **policy_analysis_solar.xlsx**:                                        
+ * **policy_analysis_wind.xlsx**:                                        
  Policy analysis output data generated from the wind model, used to generate Figure 3b. The file also includes detailed policy data relevanmt for the policy attribution. Source: Climate Policy Atlas (the relevant data are in effect_quant_by_period sheet). This file also contains the data for generating Figures 1a and 1b in the Manuscript. 
  
 ---
